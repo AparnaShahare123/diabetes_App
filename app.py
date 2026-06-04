@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load model
-model = pickle.load(open("final_model.pkl", "rb"))
+model = pickle.load(open("Xgb_model.pkl", "rb"))
 
 st.title("Diabetes Prediction App")
 
@@ -35,6 +35,6 @@ if st.button("Predict"):
     prediction = model.predict(input_data)
 
     if prediction[0] == 1:
-        st.error("Person is likely to have Diabetes")
+        st.error("Person have Diabetes")
     else:
-        st.success("Person is unlikely to have Diabetes")
+        st.success("Person do not have Diabetes")
